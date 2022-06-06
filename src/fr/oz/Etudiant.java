@@ -27,36 +27,34 @@ public class Etudiant {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
-            System.out.println("Ce ne sont pas les même étudiants");
+
             return true;
         }
         if (obj == null || getClass() != obj.getClass()) {
-            System.out.println("Ce ne sont pas les même étudiants");
 
             return false;
         }
 
         Etudiant other = (Etudiant) obj;
         if (age != other.age) {
-            System.out.println("Ce ne sont pas les même étudiants");
 
             return false;
         }
         if (nom == null) {
             if (other.nom != null)
                 return false;
-            System.out.println("Ce ne sont pas les même étudiants");
+
         } else if (!nom.equalsIgnoreCase(other.nom))
 
             return false;
         if (prenom == null) {
             if (other.prenom != null)
-                System.out.println("Ce ne sont pas les même étudiants");
-            return false;
+
+                return false;
         } else if (!prenom.equalsIgnoreCase(other.prenom))
 
             return false;
-        System.out.println("Ce sont les même étudiants");
+
         return true;
 
     }
