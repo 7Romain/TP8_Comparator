@@ -2,6 +2,8 @@ package fr.oz;
 
 public class Etudiant {
     String prenom;
+    String nom;
+    int age;
 
     @Override
     public String toString() {
@@ -18,7 +20,7 @@ public class Etudiant {
         return result;
     }
 
-    public Etudiant(String prenom, String nom, int age) {
+    public Etudiant(String nom, String prenom, int age) {
         this.prenom = prenom;
         this.nom = nom;
         this.age = age;
@@ -58,9 +60,6 @@ public class Etudiant {
         return true;
 
     }
-
-    String nom;
-    int age;
 
     public String getPrenom() {
         return prenom;

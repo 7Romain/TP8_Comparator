@@ -4,18 +4,16 @@ import java.util.Comparator;
 
 public class CompareEtudiant implements Comparator<Etudiant> {
     @Override
-    public int compare(Etudiant p1, Etudiant p2){
-        int diff =p1.getNom().compareTo(p2.getNom());
-        if (diff != 0) {
-            return diff;
+    public int compare(Etudiant p1, Etudiant p2) {
+        if (p1.getNom().compareTo(p2.getNom()) == 0) {
+
+            if (p1.getPrenom().compareTo(p2.getPrenom()) == 0) {
+                return p1.getAge() - p2.getAge();
+            }
+            return p1.getPrenom().compareTo(p2.getPrenom());
         }
-        diff =p1.getPrenom().compareTo(p2.getPrenom());
-        if (diff != 0) {
-            return diff;
-        }
-        diff = Integer.comparep1.getAge(), p2.getAge());
-        if (diff != 0) {
-            return diff;
-        }
+        return p1.getNom().compareTo(p2.getNom());
+
     }
+
 }
