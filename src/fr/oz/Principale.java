@@ -20,7 +20,7 @@ public class Principale {
         societe.congedier(duval);
         societe.afficher(false);
         System.out.println("********************************************************");
-        societe.afficher(true);
+        societe.afficher();
 
     }
 

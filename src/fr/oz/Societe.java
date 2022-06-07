@@ -19,15 +19,11 @@ public class Societe {
     }
 
     void afficher() {
-        Iterator<Etudiant> iterateur = listePersonnel.iterator();
-        while (iterateur.hasNext()) {
-            System.out.println(iterateur.next());
-        }
-
+        afficher(true);
     }
 
     void afficher(boolean ordre) {
-        if (ordre == true) {
+        if (ordre) {
             Collections.sort(listePersonnel, comparaison);
         } else {
             Collections.sort(listePersonnel, comparaison.reversed());
@@ -41,8 +37,7 @@ public class Societe {
 
     public Salarie recruter(Etudiant etudiant) {
 
-        dernierId++;
-        int id = dernierId;
+        int id = ++dernierId;
         Salarie salarie = new Salarie(etudiant.getNom(), etudiant.getPrenom(), etudiant.getAge(), id);
         listePersonnel.add(salarie);
         listePersonnel.remove(etudiant);
