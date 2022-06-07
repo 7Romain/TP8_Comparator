@@ -7,7 +7,7 @@ public class Etudiant {
 
     @Override
     public String toString() {
-        return "Identité de l'étudiant -----> " + nom + " " + prenom + " " + age + " " + "ans.";
+        return "Étudiant : " + nom + " " + prenom + " " + age + " " + "ans.";
     }
 
     @Override

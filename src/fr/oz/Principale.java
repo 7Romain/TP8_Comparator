@@ -5,23 +5,22 @@ import java.util.Collections;
 public class Principale {
     public static void main(String[] args) {
 
-        Societe entreprise = new Societe();
-        Etudiant pers = new Etudiant("Durand", "Michel", 55);
-        entreprise.recruter(new Etudiant("Mercier", "Jean", 50));
-        entreprise.recruter(new Etudiant("Morin", "Nathalie", 35));
-        entreprise.recruter(new Etudiant("Martin", "Louis", 35));
-        entreprise.recruter(new Etudiant("Rodriguez", "Philippe", 35));
-        entreprise.recruter(new Etudiant("Rodriguez", "Evelyne", 30));
-        entreprise.recruter(new Etudiant("Martin", "Josette", 25));
-        entreprise.recruter(new Etudiant("Charpentier", "Pierre", 25));
-        entreprise.recruter(new Etudiant("Charpentier", "Pierre", 18));
-        entreprise.recruter(pers);
-        entreprise.afficher();
-        entreprise.congedier(pers);
-        CompareEtudiant comparaison = new CompareEtudiant();
-        System.out.println("------------------------------------------------------------------");
-        Collections.sort(entreprise.listePersonnel, comparaison);
-        entreprise.afficher(true);
+        Societe societe = new Societe();
+        Salarie durand = societe.recruter(new Etudiant("Durand", "Michel", 55));
+        Salarie leclerc = societe.recruter(new Etudiant("Leclerc", "Claude", 50));
+        Salarie mercier = societe.recruter(new Etudiant("Mercier", "Paul", 38));
+        Salarie dubois = societe.recruter(new Etudiant("Dubois", "Paul", 38));
+        Salarie martin = societe.recruter(new Etudiant("Martin", "Catherine", 21));
+        Salarie charpentier = societe.recruter(new Etudiant("Charpentier", "Pierre", 25));
+        Salarie vannier = societe.recruter(new Etudiant("Vannier", "Guillaume", 38));
+        Salarie rodriguez = societe.recruter(new Etudiant("Rodriguez", "Isabelle", 25));
+        societe.congedier(vannier);
+        societe.congedier(martin);
+        Salarie duval = societe.recruter(new Etudiant("Duval", "Isabelle", 30));
+        societe.congedier(duval);
+        societe.afficher(false);
+        System.out.println("********************************************************");
+        societe.afficher(true);
 
     }
 

@@ -6,16 +6,12 @@ import java.util.Iterator;
 
 public class Societe {
     ArrayList<Etudiant> listePersonnel;
-    CompareEtudiant comparaison = new CompareEtudiant();
+    int dernierId;
+
+    CompareEtudiant comparaison = new CompareEtudiantSalarie();
 
     public Societe() {
         listePersonnel = new ArrayList<>();
-    }
-
-    void recruter(Etudiant etudiant) {
-
-        listePersonnel.add(etudiant);
-
     }
 
     void congedier(Etudiant etudiant) {
@@ -41,6 +37,23 @@ public class Societe {
             System.out.println(iterateur.next());
         }
 
+    }
+
+    public Salarie recruter(Etudiant etudiant) {
+
+        dernierId++;
+        int id = dernierId;
+        Salarie salarie = new Salarie(etudiant.getNom(), etudiant.getPrenom(), etudiant.getAge(), id);
+        listePersonnel.add(salarie);
+        listePersonnel.remove(etudiant);
+        return salarie;
+    }
+
+    public void congedier(Salarie employe) {
+
+        Etudiant etudiant = new Etudiant(employe.getNom(), employe.getPrenom(), employe.getAge());
+        listePersonnel.add(etudiant);
+        listePersonnel.remove(employe);
     }
 
 }
